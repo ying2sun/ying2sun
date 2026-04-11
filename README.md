@@ -49,7 +49,22 @@ Built with: `Flan-T5` · `RAG` · `FAISS` · `Hugging Face` · `Gemini API`
 
 ## 📈 Currently Building
 
-**Traditional Chinese GEO Content Pipeline** — A 4-agent system (Fetcher → Translator → Editorial Rewriter → Validator) that takes English news articles and produces GEO-optimized Hong Kong Traditional Chinese articles. The core editorial rewriting agent is a QLoRA fine-tuned Llama 3.1 8B Student model — trained via knowledge distillation from a frontier Teacher model — running locally at zero inference cost via Ollama. Key methodological decisions: train/test distribution alignment (Student trains on machine-translated input, not human-written Chinese), three-level evaluation framework (training data quality → Student model quality → end-to-end pipeline quality), and cross-model LLM-as-Judge evaluation. Total project budget: under $20.
+### 🀄 Traditional Chinese GEO Content Pipeline
+*English news in → GEO-optimized Hong Kong Traditional Chinese article out — at near-zero inference cost*
+
+A 4-agent system that takes English news articles and produces publication-ready, GEO-formatted Traditional Chinese articles in authentic Hong Kong editorial voice:
+
+`Fetcher` → `Translator` → `Editorial Rewriter (fine-tuned Student)` → `Validator`
+
+The core agent is a **QLoRA fine-tuned Llama 3.1 8B** model, trained via knowledge distillation from a frontier Teacher model, deployed locally via Ollama at **zero marginal inference cost**.
+
+**Key methodological decisions:**
+- Train/test distribution alignment — Student trains on machine-translated Chinese input to match production conditions, eliminating distribution mismatch
+- Knowledge distillation with synthetic data generation — Teacher model produces GEO-formatted training articles; Student learns to replicate the format and editorial voice
+- Three-level evaluation framework: training data quality (AI Judge + human eval + Pearson agreement) → Student model quality in isolation → end-to-end pipeline quality (English → Chinese GEO)
+- Cross-model LLM-as-Judge — generator and evaluator are different model families to avoid self-evaluation bias
+
+**Total project budget: under $20** | Built with: `Llama 3.1 8B` · `QLoRA/Unsloth` · `DeepSeek V3.2` · `Ollama` · `OpenRouter`
 
 ---
 
