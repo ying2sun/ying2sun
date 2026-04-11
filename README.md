@@ -2,7 +2,7 @@
 
 **Data Scientist & AI Engineer** based in San Jose, CA.  
 I build production-grade agentic AI systems — LangGraph workflows, RAG pipelines, and GEO-optimized content intelligence — with measurable business impact.  
-Currently completing my **M.S. in Applied Data Science at the University of Michigan** (4.0 GPA), specializing in Agentic AI and Generative Engine Optimization.
+Currently completing my **MADS (Master of Applied Data Science) at the University of Michigan** (4.0 GPA), specializing in Agentic AI and Generative Engine Optimization.
 
 ---
 
@@ -49,7 +49,7 @@ Built with: `Flan-T5` · `RAG` · `FAISS` · `Hugging Face` · `Gemini API`
 
 ## 📈 Currently Building
 
-**TC Headline Distillation** — Fine-tuning Llama 3.1 8B via QLoRA to replace frontier API calls (~$50K/month equivalent) for Traditional Chinese GEO content generation, at a total project cost under $20. Multi-evaluator validation framework: LLM-as-Judge + human eval + Pearson correlation agreement analysis.
+**Traditional Chinese GEO Content Pipeline** — A 4-agent system (Fetcher → Translator → Editorial Rewriter → Validator) that takes English news articles and produces GEO-optimized Hong Kong Traditional Chinese articles. The core editorial rewriting agent is a QLoRA fine-tuned Llama 3.1 8B Student model — trained via knowledge distillation from a frontier Teacher model — running locally at zero inference cost via Ollama. Key methodological decisions: train/test distribution alignment (Student trains on machine-translated input, not human-written Chinese), three-level evaluation framework (training data quality → Student model quality → end-to-end pipeline quality), and cross-model LLM-as-Judge evaluation. Total project budget: under $20.
 
 ---
 
