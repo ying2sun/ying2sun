@@ -2,7 +2,7 @@
 
 **Data Scientist & AI Engineer** based in San Jose, CA.  
 I build production-grade agentic AI systems — LangGraph workflows, RAG pipelines, and GEO-optimized content intelligence — with measurable business impact.  
-Currently completing my **MADS (Master of Applied Data Science) at the University of Michigan** (4.0 GPA), specializing in Agentic AI and Generative Engine Optimization.
+**University of Michigan, Master of Applied Data Science** (4.0 GPA), specializing in Agentic AI and Generative Engine Optimization.
 
 ---
 
