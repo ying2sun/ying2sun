@@ -38,7 +38,7 @@ I build production-grade agentic AI systems: LangGraph workflows, RAG pipelines,
 ### 🤖 [Multi-Agent Editorial & Fact-Verification Loop](https://github.com/ying2sun/MultiAgent-Editorial-Workflow)
 A stateful 4-agent LangGraph orchestration pipeline that autonomously drafts, fact-checks, and GEO-optimizes news articles in real time.  
 Built with: `LangGraph` · `Pydantic` · `NewsData.io API` · `Streamlit` · `Google Gemini`  
-→ **Live Demo:** [Try it here](https://multiagent-editorial-workflow-nx4legyb4hpt8x8ifpuy7s.streamlit.app)
+→ **Live Demo:** [Try it here](https://huggingface.co/spaces/ying2sun/MultiAgent-Editorial-Workflow)
 
 ### 📺 [AI-Powered YouTube Video Summarization via RAG & Knowledge Distillation](https://github.com/ying2sun/AI-powered-YouTube-Video-Summarization)
 Fine-tuned Flan-T5 using knowledge distillation from Gemini 2.0 to produce cost-free, locally deployable video summaries — validated through ROUGE metrics and a structured human evaluation framework.  
