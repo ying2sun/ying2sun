@@ -24,6 +24,8 @@ I build production-grade agentic AI systems: LangGraph workflows, RAG pipelines,
 **Data & Cloud**  
 ![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat&logo=postgresql&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazonaws&logoColor=white)
+![AWS Lambda](https://img.shields.io/badge/Lambda-FF9900?style=flat&logo=awslambda&logoColor=white)
+![DynamoDB](https://img.shields.io/badge/DynamoDB-4053D6?style=flat&logo=amazondynamodb&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white)
 
@@ -36,12 +38,16 @@ I build production-grade agentic AI systems: LangGraph workflows, RAG pipelines,
 ## 🚀 Featured Projects
 
 ### 🤖 [Multi-Agent Editorial & Fact-Verification Loop](https://github.com/ying2sun/MultiAgent-Editorial-Workflow)
-A stateful 4-agent LangGraph orchestration pipeline that autonomously drafts, fact-checks, and GEO-optimizes news articles in real time.  
+A stateful 4-agent LangGraph orchestration pipeline that autonomously drafts, fact-checks, and GEO-optimizes news articles in real time. Includes a hallucination correction loop using LLM-as-a-Judge via Pydantic structured outputs.  
 Built with: `LangGraph` · `Pydantic` · `NewsData.io API` · `Streamlit` · `Google Gemini`  
-→ **Live Demo:** [Try it here](https://huggingface.co/spaces/ying2sun/MultiAgent-Editorial-Workflow)
+→ **Live Demo:** [Try it on Streamlit](https://multiagent-editorial-workflow-nx4legyb4hpt8x8ifpuy7s.streamlit.app)
+
+### ⚡ [AP News Auto Pipeline](https://github.com/ying2sun/ap-news-pipeline)
+A serverless, event-driven multi-model pipeline on AWS Lambda. Monitors AP News every 10 minutes, classifies breaking stories, translates to Traditional Chinese, rewrites in GEO format, fact-checks for hallucinations, and auto-publishes drafts to WordPress. Four models, each chosen for a specific role: DeepSeek for classification, Claude Sonnet for translation, Gemini 2.5 Pro for editorial rewriting, Claude Haiku for QC.  
+Built with: `AWS Lambda` · `DynamoDB` · `EventBridge` · `OpenRouter` · `WordPress REST API`
 
 ### 📺 [AI-Powered YouTube Video Summarization via RAG & Knowledge Distillation](https://github.com/ying2sun/AI-powered-YouTube-Video-Summarization)
-Fine-tuned Flan-T5 using knowledge distillation from Gemini 2.0 to produce cost-free, locally deployable video summaries — validated through ROUGE metrics and a structured human evaluation framework.  
+Fine-tuned Flan-T5 using knowledge distillation from Gemini 2.0 to produce cost-free, locally deployable video summaries, validated through ROUGE metrics and a structured human evaluation framework.  
 Built with: `Flan-T5` · `RAG` · `FAISS` · `Hugging Face` · `Gemini API`  
 → **Live Demo:** [Hugging Face Spaces](https://huggingface.co/spaces/ying2sun/youtube-video-summarizer-capstone)
 
@@ -49,20 +55,20 @@ Built with: `Flan-T5` · `RAG` · `FAISS` · `Hugging Face` · `Gemini API`
 
 ## 📈 Currently Building
 
-### 🀄 Traditional Chinese GEO Content Pipeline
-*English news in → GEO-optimized Hong Kong Traditional Chinese article out — at near-zero inference cost*
+### 🀄 Chinese Editorial Style Transfer via Knowledge Distillation and QLoRA Fine-Tuning
+*English news in → GEO-optimized Traditional Chinese article out, at near-zero inference cost*
 
-A 4-agent system that takes English news articles and produces publication-ready, GEO-formatted Traditional Chinese articles in authentic Hong Kong editorial voice:
+A 4-agent system that takes English news articles and produces publication-ready, GEO-formatted Traditional Chinese articles in authentic editorial voice:
 
 `Fetcher` → `Translator` → `Editorial Rewriter (fine-tuned Student)` → `Validator`
 
 The core agent is a **QLoRA fine-tuned Llama 3.1 8B** model, trained via knowledge distillation from a frontier Teacher model, deployed locally via Ollama at **zero marginal inference cost**.
 
 **Key methodological decisions:**
-- Train/test distribution alignment — Student trains on machine-translated Chinese input to match production conditions, eliminating distribution mismatch
-- Knowledge distillation with synthetic data generation — Teacher model produces GEO-formatted training articles; Student learns to replicate the format and editorial voice
+- Train/test distribution alignment: Student trains on machine-translated Chinese input to match production conditions, eliminating distribution mismatch
+- Knowledge distillation with synthetic data generation: Teacher model produces GEO-formatted training articles; Student learns to replicate the format and editorial voice
 - Three-level evaluation framework: training data quality (AI Judge + human eval + Pearson agreement) → Student model quality in isolation → end-to-end pipeline quality (English → Chinese GEO)
-- Cross-model LLM-as-Judge — generator and evaluator are different model families to avoid self-evaluation bias
+- Cross-model LLM-as-Judge: generator and evaluator are different model families to avoid self-evaluation bias
 
 **Total project budget: under $20** | Built with: `Llama 3.1 8B` · `QLoRA/Unsloth` · `DeepSeek V3.2` · `Ollama` · `OpenRouter`
 
