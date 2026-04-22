@@ -40,7 +40,7 @@ I build production-grade agentic AI systems: LangGraph workflows, RAG pipelines,
 ### 🤖 [Multi-Agent Editorial & Fact-Verification Loop](https://github.com/ying2sun/MultiAgent-Editorial-Workflow)
 A stateful 4-agent LangGraph orchestration pipeline that autonomously drafts, fact-checks, and GEO-optimizes news articles in real time. Includes a hallucination correction loop using LLM-as-a-Judge via Pydantic structured outputs.  
 Built with: `LangGraph` · `Pydantic` · `NewsData.io API` · `Streamlit` · `Google Gemini`  
-→ **Live Demo:** [Try it on Streamlit](https://multiagent-editorial-workflow-nx4legyb4hpt8x8ifpuy7s.streamlit.app)
+→ **Live Demo:** [Try it on Hugging Face Spaces](https://huggingface.co/spaces/ying2sun/MultiAgent-Editorial-Workflow)
 
 ### ⚡ [AP News Auto Pipeline](https://github.com/ying2sun/ap-news-pipeline)
 A serverless, event-driven multi-model pipeline on AWS Lambda. Monitors AP News every 10 minutes, classifies breaking stories, translates to Traditional Chinese, rewrites in GEO format, fact-checks for hallucinations, and auto-publishes drafts to WordPress. Four models, each chosen for a specific role: DeepSeek for classification, Claude Sonnet for translation, Gemini 2.5 Pro for editorial rewriting, Claude Haiku for QC.  
@@ -66,11 +66,15 @@ The core agent is a **QLoRA fine-tuned Llama 3.1 8B** model, trained via knowled
 
 **Key methodological decisions:**
 - Train/test distribution alignment: Student trains on machine-translated Chinese input to match production conditions, eliminating distribution mismatch
-- Knowledge distillation with synthetic data generation: Teacher model produces GEO-formatted training articles; Student learns to replicate the format and editorial voice
-- Three-level evaluation framework: training data quality (AI Judge + human eval + Pearson agreement) → Student model quality in isolation → end-to-end pipeline quality (English → Chinese GEO)
+- Knowledge distillation with synthetic data generation: Teacher produces GEO-formatted training articles; Student learns to replicate voice and structure
+- Three-level evaluation framework: training data quality → Student model quality in isolation → end-to-end pipeline quality (English → Chinese GEO)
 - Cross-model LLM-as-Judge: generator and evaluator are different model families to avoid self-evaluation bias
+- Human vs AI judge calibration: discovered AI judge is systematically lenient, clustering near ceiling while missing macro-structural weaknesses. Human evaluation used to set the quality floor for training data selection.
 
-**Total project budget: under $20** | Built with: `Llama 3.1 8B` · `QLoRA/Unsloth` · `DeepSeek V3.2` · `Ollama` · `OpenRouter`
+**Current status:** Training data evaluation complete (106 articles, AI scoring + human scoring + Pearson agreement analysis). Next: formatting training data for QLoRA fine-tuning.  
+**Total project spend so far: ~$8.54 of a $20 budget**
+
+Built with: `Llama 3.1 8B` · `QLoRA/Unsloth` · `DeepSeek V3.2` · `Ollama` · `OpenRouter`
 
 ---
 
