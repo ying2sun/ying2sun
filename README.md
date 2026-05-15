@@ -55,7 +55,7 @@ Built with: `Flan-T5` · `RAG` · `FAISS` · `Hugging Face` · `Gemini API`
 
 ## 📈 Currently Building
 
-### 🀄 Chinese Editorial Style Transfer via Knowledge Distillation and QLoRA Fine-Tuning
+### 🀄 [Chinese Editorial Style Transfer via Knowledge Distillation and QLoRA Fine-Tuning](https://github.com/ying2sun/tc-headline-distillation)
 *English news in → GEO-optimized Traditional Chinese article out, at near-zero inference cost*
 
 A 4-agent system that takes English news articles and produces publication-ready, GEO-formatted Traditional Chinese articles in authentic editorial voice:
