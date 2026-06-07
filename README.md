@@ -11,6 +11,7 @@ I build production-grade agentic AI systems: LangGraph workflows, RAG pipelines,
 **AI & GenAI**  
 ![LangGraph](https://img.shields.io/badge/LangGraph-000000?style=flat&logo=python&logoColor=white)
 ![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat&logo=python&logoColor=white)
+![MCP](https://img.shields.io/badge/MCP-4B5563?style=flat&logoColor=white)
 ![RAG](https://img.shields.io/badge/RAG-6E40C9?style=flat&logo=openai&logoColor=white)
 ![Prompt Engineering](https://img.shields.io/badge/Prompt_Engineering-FF6B6B?style=flat)
 ![GEO / AIO](https://img.shields.io/badge/GEO_%2F_AIO-0077B5?style=flat)
@@ -38,8 +39,8 @@ I build production-grade agentic AI systems: LangGraph workflows, RAG pipelines,
 ## 🚀 Featured Projects
 
 ### 🤖 [Multi-Agent Editorial & Fact-Verification Loop](https://github.com/ying2sun/MultiAgent-Editorial-Workflow)
-A stateful 4-agent LangGraph orchestration pipeline that autonomously drafts, fact-checks, and GEO-optimizes news articles in real time. Includes a hallucination correction loop using LLM-as-a-Judge via Pydantic structured outputs.  
-Built with: `LangGraph` · `Pydantic` · `NewsData.io API` · `Streamlit` · `Google Gemini`  
+A stateful 4-agent LangGraph orchestration pipeline that autonomously drafts, fact-checks, and GEO-optimizes news articles in real time. Agent A retrieves live data via a dedicated MCP server (stdio transport), decoupling the data source from the orchestration layer. Includes a hallucination correction loop using LLM-as-a-Judge via Pydantic structured outputs.  
+Built with: `LangGraph` · `MCP` · `Pydantic` · `NewsData.io API` · `Streamlit` · `Google Gemini`  
 → **Live Demo:** [Try it on Hugging Face Spaces](https://huggingface.co/spaces/ying2sun/MultiAgent-Editorial-Workflow)
 
 ### ⚡ [AP News Auto Pipeline](https://github.com/ying2sun/ap-news-pipeline)
