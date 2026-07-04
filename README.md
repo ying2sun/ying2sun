@@ -73,7 +73,7 @@ The core agent is a **QLoRA fine-tuned Llama 3.1 8B** model, trained via knowled
 - Human vs AI judge calibration: discovered AI judge is systematically lenient, clustering near ceiling while missing macro-structural weaknesses. Human evaluation used to set the quality floor for training data selection.
 
 **Current status:** Training data pipeline complete. 106 articles processed through tone extraction, translation, GEO generation, AI + human evaluation, and train/val/test split (76/15/15). Student system prompt finalized. Next: QLoRA fine-tuning on RunPod RTX 4090.  
-**Total project spend so far: ~$8.54 of a $20 budget**
+**Total project spend so far: ~$9.40 of a $20 budget**
 
 Built with: `Llama 3.1 8B` · `QLoRA/Unsloth` · `DeepSeek V3.2` · `Ollama` · `OpenRouter`
 
