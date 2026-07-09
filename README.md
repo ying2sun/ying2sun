@@ -43,7 +43,8 @@ I build production-grade agentic AI systems: LangGraph workflows, RAG pipelines,
 ### 🎙️ [AI Companion Chatbot Demo](https://github.com/ying2sun/ai-companion-chatbot-demo)
 An independent demo of the kind of production work I do as the AI engineer for a senior-care nonprofit: a voice-first conversational AI with speech-to-text, an LLM, and text-to-speech orchestrated into one pipeline, behind a layered system prompt and a two-tier safety guardrail. Extended with MCP tool-calling so the model hands off exact arithmetic instead of guessing at it, and a from-scratch evaluation framework (deterministic checks now, a kappa-validated LLM judge next) modeled on production ML evaluation practice.  
 Built with: `Gemini` · `MCP` · `FastAPI` · `Groq Whisper` · `MiniMax TTS`  
-→ **Live Demo:** [Try it here](https://ying2sun.github.io/ai-companion-chatbot-demo/)
+→ **Live Demo:** [Try it here](https://ying2sun.github.io/ai-companion-chatbot-demo/) *(the first message may take up to a minute, since the backend runs on a
+free hosting tier that sleeps after inactivity and has to wake back up)*
  
 ### 🤖 [Multi-Agent Editorial & Fact-Verification Loop](https://github.com/ying2sun/MultiAgent-Editorial-Workflow)
 A stateful 4-agent LangGraph orchestration pipeline that autonomously drafts, fact-checks, and GEO-optimizes news articles in real time. Agent A retrieves live data via a dedicated MCP server (stdio transport), decoupling the data source from the orchestration layer. Includes a hallucination correction loop using LLM-as-a-Judge via Pydantic structured outputs.  
