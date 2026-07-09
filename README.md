@@ -1,85 +1,91 @@
 # Hi, I'm Yingying Sun 👋
 
-**Data Scientist & AI Engineer** based in San Jose, CA.  
-I build production-grade agentic AI systems: LangGraph workflows, RAG pipelines, and GEO-optimized content intelligence, with measurable business impact.  
+**AI Engineer & Data Scientist** based in San Jose, CA.  
+I build production-grade agentic AI systems: LangGraph workflows, RAG pipelines, voice-first conversational AI, and GEO-optimized content intelligence, with measurable business impact.  
 **University of Michigan, Master of Applied Data Science** (4.0 GPA), specializing in Agentic AI and Generative Engine Optimization.
-
+ 
 ---
-
+ 
 ## 🛠️ Tech Stack
-
+ 
 **AI & GenAI**  
 ![LangGraph](https://img.shields.io/badge/LangGraph-000000?style=flat&logo=python&logoColor=white)
 ![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat&logo=python&logoColor=white)
 ![MCP](https://img.shields.io/badge/MCP-4B5563?style=flat&logoColor=white)
 ![RAG](https://img.shields.io/badge/RAG-6E40C9?style=flat&logo=openai&logoColor=white)
 ![Prompt Engineering](https://img.shields.io/badge/Prompt_Engineering-FF6B6B?style=flat)
+![Voice AI](https://img.shields.io/badge/Voice_AI-14B8A6?style=flat)
 ![GEO / AIO](https://img.shields.io/badge/GEO_%2F_AIO-0077B5?style=flat)
-
+ 
 **Machine Learning**  
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat&logo=scikitlearn&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white)
 ![Hugging Face](https://img.shields.io/badge/HuggingFace-FFD21E?style=flat&logo=huggingface&logoColor=black)
-
+ 
 **Data & Cloud**  
 ![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat&logo=postgresql&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazonaws&logoColor=white)
 ![AWS Lambda](https://img.shields.io/badge/Lambda-FF9900?style=flat&logo=awslambda&logoColor=white)
 ![DynamoDB](https://img.shields.io/badge/DynamoDB-4053D6?style=flat&logo=amazondynamodb&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white)
-
+ 
 **BI & Visualization**  
 ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=flat&logo=tableau&logoColor=white)
 ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=flat&logo=powerbi&logoColor=black)
-
+ 
 ---
-
+ 
 ## 🚀 Featured Projects
-
+ 
+### 🎙️ [AI Companion Chatbot Demo](https://github.com/ying2sun/ai-companion-chatbot-demo)
+An independent demo of the kind of production work I do as the AI engineer for a senior-care nonprofit: a voice-first conversational AI with speech-to-text, an LLM, and text-to-speech orchestrated into one pipeline, behind a layered system prompt and a two-tier safety guardrail. Extended with MCP tool-calling so the model hands off exact arithmetic instead of guessing at it, and a from-scratch evaluation framework (deterministic checks now, a kappa-validated LLM judge next) modeled on production ML evaluation practice.  
+Built with: `Gemini` · `MCP` · `FastAPI` · `Groq Whisper` · `MiniMax TTS`  
+→ **Live Demo:** [Try it here](https://ying2sun.github.io/ai-companion-chatbot-demo/)
+ 
 ### 🤖 [Multi-Agent Editorial & Fact-Verification Loop](https://github.com/ying2sun/MultiAgent-Editorial-Workflow)
 A stateful 4-agent LangGraph orchestration pipeline that autonomously drafts, fact-checks, and GEO-optimizes news articles in real time. Agent A retrieves live data via a dedicated MCP server (stdio transport), decoupling the data source from the orchestration layer. Includes a hallucination correction loop using LLM-as-a-Judge via Pydantic structured outputs.  
 Built with: `LangGraph` · `MCP` · `Pydantic` · `NewsData.io API` · `Streamlit` · `Google Gemini`  
 → **Live Demo:** [Try it on Hugging Face Spaces](https://huggingface.co/spaces/ying2sun/MultiAgent-Editorial-Workflow)
-
+ 
 ### ⚡ [AP News Auto Pipeline](https://github.com/ying2sun/ap-news-pipeline)
 A serverless, event-driven multi-model pipeline on AWS Lambda. Monitors AP News every 10 minutes, classifies breaking stories, translates to Traditional Chinese, rewrites in GEO format, fact-checks for hallucinations, and auto-publishes drafts to WordPress. Four models, each chosen for a specific role: DeepSeek for classification, Claude Sonnet for translation, Gemini 2.5 Pro for editorial rewriting, Claude Haiku for QC.  
 Built with: `AWS Lambda` · `DynamoDB` · `EventBridge` · `OpenRouter` · `WordPress REST API`
-
+ 
 ### 📺 [AI-Powered YouTube Video Summarization via RAG & Knowledge Distillation](https://github.com/ying2sun/AI-powered-YouTube-Video-Summarization)
 Fine-tuned Flan-T5 using knowledge distillation from Gemini 2.0 to produce cost-free, locally deployable video summaries, validated through ROUGE metrics and a structured human evaluation framework.  
 Built with: `Flan-T5` · `RAG` · `FAISS` · `Hugging Face` · `Gemini API`  
 → **Live Demo:** [Hugging Face Spaces](https://huggingface.co/spaces/ying2sun/youtube-video-summarizer-capstone)
-
+ 
 ---
-
+ 
 ## 📈 Currently Building
-
+ 
 ### 🀄 [Chinese Editorial Style Transfer via Knowledge Distillation and QLoRA Fine-Tuning](https://github.com/ying2sun/tc-headline-distillation)
 *English news in → GEO-optimized Traditional Chinese article out, at near-zero inference cost*
-
+ 
 A 4-agent system that takes English news articles and produces publication-ready, GEO-formatted Traditional Chinese articles in authentic editorial voice:
-
+ 
 `Fetcher` → `Translator` → `Editorial Rewriter (fine-tuned Student)` → `Validator`
-
+ 
 The core agent is a **QLoRA fine-tuned Llama 3.1 8B** model, trained via knowledge distillation from a frontier Teacher model, deployed locally via Ollama at **zero marginal inference cost**.
-
+ 
 **Key methodological decisions:**
 - Train/test distribution alignment: Student trains on machine-translated Chinese input to match production conditions, eliminating distribution mismatch
 - Knowledge distillation with synthetic data generation: Teacher produces GEO-formatted training articles; Student learns to replicate voice and structure
 - Three-level evaluation framework: training data quality → Student model quality in isolation → end-to-end pipeline quality (English → Chinese GEO)
 - Cross-model LLM-as-Judge: generator and evaluator are different model families to avoid self-evaluation bias
 - Human vs AI judge calibration: discovered AI judge is systematically lenient, clustering near ceiling while missing macro-structural weaknesses. Human evaluation used to set the quality floor for training data selection.
-
 **Current status:** Training data pipeline complete. 106 articles processed through tone extraction, translation, GEO generation, AI + human evaluation, and train/val/test split (76/15/15). Student system prompt finalized. Next: QLoRA fine-tuning on RunPod RTX 4090.  
 **Total project spend so far: ~$9.40 of a $20 budget**
-
+ 
 Built with: `Llama 3.1 8B` · `QLoRA/Unsloth` · `DeepSeek V3.2` · `Ollama` · `OpenRouter`
-
+ 
 ---
-
+ 
 ## 📬 Let's Connect
-
+ 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yingying-sun-44869923)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/ying2sun)
